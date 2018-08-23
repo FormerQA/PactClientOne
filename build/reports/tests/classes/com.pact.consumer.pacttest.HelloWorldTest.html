@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - Class com.pact.consumer.pacttest.HelloWorldTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>Class com.pact.consumer.pacttest.HelloWorldTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/com.pact.consumer.pacttest.html">com.pact.consumer.pacttest</a> &gt; HelloWorldTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">1</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">1.465s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">testPactForConsumer</td>
+<td>1.465s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>21:06:22.069 [Test worker] DEBUG org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: default
+21:06:22.085 [Test worker] DEBUG org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+21:06:22.086 [Test worker] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection request: [route: {}-&gt;http://localhost:8080][total kept alive: 0; route allocated: 0 of 100; total allocated: 0 of 200]
+21:06:22.106 [Test worker] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection leased: [id: 0][route: {}-&gt;http://localhost:8080][total kept alive: 0; route allocated: 1 of 100; total allocated: 1 of 200]
+21:06:22.109 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Opening connection {}-&gt;http://localhost:8080
+21:06:22.112 [Test worker] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connecting to localhost/127.0.0.1:8080
+21:06:22.118 [Test worker] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connection established 127.0.0.1:63995&lt;-&gt;127.0.0.1:8080
+21:06:22.119 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Executing request OPTIONS / HTTP/1.1
+21:06:22.119 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Target auth state: UNCHALLENGED
+21:06:22.119 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Proxy auth state: UNCHALLENGED
+21:06:22.123 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 &gt;&gt; OPTIONS / HTTP/1.1
+21:06:22.123 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 &gt;&gt; X-PACT-BOOTCHECK: true
+21:06:22.123 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 &gt;&gt; Host: localhost:8080
+21:06:22.123 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 &gt;&gt; Connection: Keep-Alive
+21:06:22.123 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 &gt;&gt; User-Agent: Apache-HttpClient/4.5.3 (Java/1.8.0_131)
+21:06:22.123 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 &gt;&gt; Accept-Encoding: gzip,deflate
+21:06:22.123 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 &gt;&gt; &quot;OPTIONS / HTTP/1.1[\r][\n]&quot;
+21:06:22.124 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 &gt;&gt; &quot;X-PACT-BOOTCHECK: true[\r][\n]&quot;
+21:06:22.124 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 &gt;&gt; &quot;Host: localhost:8080[\r][\n]&quot;
+21:06:22.124 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 &gt;&gt; &quot;Connection: Keep-Alive[\r][\n]&quot;
+21:06:22.124 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 &gt;&gt; &quot;User-Agent: Apache-HttpClient/4.5.3 (Java/1.8.0_131)[\r][\n]&quot;
+21:06:22.124 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 &gt;&gt; &quot;Accept-Encoding: gzip,deflate[\r][\n]&quot;
+21:06:22.124 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 &gt;&gt; &quot;[\r][\n]&quot;
+21:06:22.130 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 &lt;&lt; &quot;HTTP/1.1 200 OK[\r][\n]&quot;
+21:06:22.130 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 &lt;&lt; &quot;Date: Wed, 22 Aug 2018 15:36:22 GMT[\r][\n]&quot;
+21:06:22.130 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 &lt;&lt; &quot;Transfer-encoding: chunked[\r][\n]&quot;
+21:06:22.130 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 &lt;&lt; &quot;X-pact-bootcheck: true[\r][\n]&quot;
+21:06:22.130 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 &lt;&lt; &quot;[\r][\n]&quot;
+21:06:22.133 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 &lt;&lt; HTTP/1.1 200 OK
+21:06:22.133 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 &lt;&lt; Date: Wed, 22 Aug 2018 15:36:22 GMT
+21:06:22.133 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 &lt;&lt; Transfer-encoding: chunked
+21:06:22.133 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 &lt;&lt; X-pact-bootcheck: true
+21:06:22.139 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Connection can be kept alive indefinitely
+21:06:22.438 [Test worker] DEBUG org.springframework.web.client.RestTemplate - Created GET request for &quot;http://localhost:8080/hello-world&quot;
+21:06:22.441 [Test worker] DEBUG org.springframework.web.client.RestTemplate - Setting request Accept header to [text/plain, application/json, application/*+json, */*]
+21:06:22.470 [Thread-5] DEBUG au.com.dius.pact.consumer.BaseMockServer - Received request: 	method: GET
+	path: /hello-world
+	query: [:]
+	headers: [Accept:text/plain, application/json, application/*+json, */*, Connection:keep-alive, Host:localhost:8080, User-agent:Java/1.8.0_131]
+	matchers: MatchingRules(rules=[:])
+	generators: Generators(categories={})
+	body: OptionalBody(state=EMPTY, value=)
+21:06:22.498 [Thread-5] DEBUG au.com.dius.pact.model.RequestMatching$ - comparing to expected request: 
+	method: GET
+	path: /hello-world
+	query: [:]
+	headers: [:]
+	matchers: MatchingRules(rules=[:])
+	generators: Generators(categories={})
+	body: OptionalBody(state=MISSING, value=null)
+21:06:22.654 [Thread-5] DEBUG au.com.dius.pact.model.Matching$ - Found a matcher for text/plain -&gt; Some((text/plain,au.com.dius.pact.matchers.PlainTextBodyMatcher@73e21f5d))
+21:06:22.655 [Thread-5] DEBUG au.com.dius.pact.model.RequestMatching$ - Request mismatch: List()
+21:06:22.748 [Thread-5] DEBUG au.com.dius.pact.consumer.BaseMockServer - Generating response: 	status: 200
+	headers: [:]
+	matchers: MatchingRules(rules=[:])
+	generators: Generators(categories={})
+	body: OptionalBody(state=PRESENT, value={&quot;id&quot;:1,&quot;content&quot;:&quot;Welcome to PACT!&quot;})
+21:06:22.755 [Test worker] DEBUG org.springframework.web.client.RestTemplate - GET request for &quot;http://localhost:8080/hello-world&quot; resulted in 200 (OK)
+21:06:22.755 [Test worker] DEBUG org.springframework.web.client.RestTemplate - Reading [java.lang.String] as &quot;application/octet-stream&quot; using [org.springframework.http.converter.StringHttpMessageConverter@7fe97cfa]
+21:06:22.870 [Test worker] DEBUG au.com.dius.pact.consumer.BaseMockServer - Writing pact test_consumer -&gt; test_provider to file pacts/test_consumer-test_provider.json
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 2.10</a> at Aug 22, 2018 9:06:23 PM</p>
+</div>
+</div>
+</body>
+</html>

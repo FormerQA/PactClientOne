@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.pact.consumer.pacttest.HelloWorldTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2018-08-22T15:36:21" hostname="c4b301c77df9" time="1.465">
+  <properties/>
+  <testcase name="testPactForConsumer" classname="com.pact.consumer.pacttest.HelloWorldTest" time="1.465"/>
+  <system-out><![CDATA[21:06:22.069 [Test worker] DEBUG org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: default
+21:06:22.085 [Test worker] DEBUG org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+21:06:22.086 [Test worker] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection request: [route: {}->http://localhost:8080][total kept alive: 0; route allocated: 0 of 100; total allocated: 0 of 200]
+21:06:22.106 [Test worker] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection leased: [id: 0][route: {}->http://localhost:8080][total kept alive: 0; route allocated: 1 of 100; total allocated: 1 of 200]
+21:06:22.109 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Opening connection {}->http://localhost:8080
+21:06:22.112 [Test worker] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connecting to localhost/127.0.0.1:8080
+21:06:22.118 [Test worker] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connection established 127.0.0.1:63995<->127.0.0.1:8080
+21:06:22.119 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Executing request OPTIONS / HTTP/1.1
+21:06:22.119 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Target auth state: UNCHALLENGED
+21:06:22.119 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Proxy auth state: UNCHALLENGED
+21:06:22.123 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 >> OPTIONS / HTTP/1.1
+21:06:22.123 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 >> X-PACT-BOOTCHECK: true
+21:06:22.123 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 >> Host: localhost:8080
+21:06:22.123 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 >> Connection: Keep-Alive
+21:06:22.123 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 >> User-Agent: Apache-HttpClient/4.5.3 (Java/1.8.0_131)
+21:06:22.123 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 >> Accept-Encoding: gzip,deflate
+21:06:22.123 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 >> "OPTIONS / HTTP/1.1[\r][\n]"
+21:06:22.124 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 >> "X-PACT-BOOTCHECK: true[\r][\n]"
+21:06:22.124 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 >> "Host: localhost:8080[\r][\n]"
+21:06:22.124 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 >> "Connection: Keep-Alive[\r][\n]"
+21:06:22.124 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 >> "User-Agent: Apache-HttpClient/4.5.3 (Java/1.8.0_131)[\r][\n]"
+21:06:22.124 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 >> "Accept-Encoding: gzip,deflate[\r][\n]"
+21:06:22.124 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 >> "[\r][\n]"
+21:06:22.130 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "HTTP/1.1 200 OK[\r][\n]"
+21:06:22.130 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "Date: Wed, 22 Aug 2018 15:36:22 GMT[\r][\n]"
+21:06:22.130 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "Transfer-encoding: chunked[\r][\n]"
+21:06:22.130 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "X-pact-bootcheck: true[\r][\n]"
+21:06:22.130 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "[\r][\n]"
+21:06:22.133 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 << HTTP/1.1 200 OK
+21:06:22.133 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 << Date: Wed, 22 Aug 2018 15:36:22 GMT
+21:06:22.133 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 << Transfer-encoding: chunked
+21:06:22.133 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 << X-pact-bootcheck: true
+21:06:22.139 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Connection can be kept alive indefinitely
+21:06:22.438 [Test worker] DEBUG org.springframework.web.client.RestTemplate - Created GET request for "http://localhost:8080/hello-world"
+21:06:22.441 [Test worker] DEBUG org.springframework.web.client.RestTemplate - Setting request Accept header to [text/plain, application/json, application/*+json, */*]
+21:06:22.470 [Thread-5] DEBUG au.com.dius.pact.consumer.BaseMockServer - Received request: 	method: GET
+	path: /hello-world
+	query: [:]
+	headers: [Accept:text/plain, application/json, application/*+json, */*, Connection:keep-alive, Host:localhost:8080, User-agent:Java/1.8.0_131]
+	matchers: MatchingRules(rules=[:])
+	generators: Generators(categories={})
+	body: OptionalBody(state=EMPTY, value=)
+21:06:22.498 [Thread-5] DEBUG au.com.dius.pact.model.RequestMatching$ - comparing to expected request: 
+	method: GET
+	path: /hello-world
+	query: [:]
+	headers: [:]
+	matchers: MatchingRules(rules=[:])
+	generators: Generators(categories={})
+	body: OptionalBody(state=MISSING, value=null)
+21:06:22.654 [Thread-5] DEBUG au.com.dius.pact.model.Matching$ - Found a matcher for text/plain -> Some((text/plain,au.com.dius.pact.matchers.PlainTextBodyMatcher@73e21f5d))
+21:06:22.655 [Thread-5] DEBUG au.com.dius.pact.model.RequestMatching$ - Request mismatch: List()
+21:06:22.748 [Thread-5] DEBUG au.com.dius.pact.consumer.BaseMockServer - Generating response: 	status: 200
+	headers: [:]
+	matchers: MatchingRules(rules=[:])
+	generators: Generators(categories={})
+	body: OptionalBody(state=PRESENT, value={"id":1,"content":"Welcome to PACT!"})
+21:06:22.755 [Test worker] DEBUG org.springframework.web.client.RestTemplate - GET request for "http://localhost:8080/hello-world" resulted in 200 (OK)
+21:06:22.755 [Test worker] DEBUG org.springframework.web.client.RestTemplate - Reading [java.lang.String] as "application/octet-stream" using [org.springframework.http.converter.StringHttpMessageConverter@7fe97cfa]
+21:06:22.870 [Test worker] DEBUG au.com.dius.pact.consumer.BaseMockServer - Writing pact test_consumer -> test_provider to file pacts/test_consumer-test_provider.json
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

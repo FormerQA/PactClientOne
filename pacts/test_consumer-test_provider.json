@@ -1,0 +1,37 @@
+{
+    "provider": {
+        "name": "test_provider"
+    },
+    "consumer": {
+        "name": "test_consumer"
+    },
+    "interactions": [
+        {
+            "description": "Test Consumer for Generating Pacts",
+            "request": {
+                "method": "GET",
+                "path": "/hello-world"
+            },
+            "response": {
+                "status": 200,
+                "body": {
+                    "id": 1,
+                    "content": "Welcome to PACT!"
+                }
+            },
+            "providerStates": [
+                {
+                    "name": "test state"
+                }
+            ]
+        }
+    ],
+    "metadata": {
+        "pact-specification": {
+            "version": "3.0.0"
+        },
+        "pact-jvm": {
+            "version": "3.5.8"
+        }
+    }
+}
