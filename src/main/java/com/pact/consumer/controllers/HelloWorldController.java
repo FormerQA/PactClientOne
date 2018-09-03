@@ -1,22 +1,30 @@
 package com.pact.consumer.controllers;
 
-import java.util.concurrent.atomic.AtomicLong;
-
-import com.pact.consumer.models.Greeting;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.*;
+import com.pact.consumer.services.*;
+import com.pact.consumer.models.Greeting;
 
 @Controller
-@RequestMapping("/hello-world")
 public class HelloWorldController {
 
-    private static final String template = "Welcome to %s!";
-    private final AtomicLong counter = new AtomicLong();
+    private HelloWorldService helloWorldService;
 
-    @GetMapping
+    @Autowired
+    HelloWorldController(HelloWorldService helloWorldService) {
+        this.helloWorldService = helloWorldService;
+    }
+
+    @GetMapping("/hello")
     public @ResponseBody
-    Greeting sayHello(@RequestParam(value="name", required=false, defaultValue="PACT") String name) {
-        return new Greeting(counter.incrementAndGet(), String.format(template, name));
+    Greeting sayHello(@RequestParam(value="name", required=false, defaultValue="Nobody") String name) {
+        return helloWorldService.sayHello(name);
     }
 
 }

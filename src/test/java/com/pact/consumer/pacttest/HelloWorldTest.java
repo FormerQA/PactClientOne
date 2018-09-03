@@ -36,35 +36,31 @@ public class HelloWorldTest
     private String newInventoryRemovalJsonBody="";
 
     @Rule
-    public PactProviderRuleMk2 mockProvider = new PactProviderRuleMk2("test_provider", "localhost", 8080, this);
+    public PactProviderRuleMk2 mockProvider = new PactProviderRuleMk2("PactProvider", "localhost", 8082, this);
 
-    @Pact(state = "test_state", provider ="test_provider" , consumer = "test_consumer") // will default to the provider name from mockProvider
+    @Pact(provider ="PactProvider" , consumer = "PactConsumerOne")
     public RequestResponsePact createFragment(PactDslWithProvider builder) {
         return builder
-                .given("test state")
-                .uponReceiving("Test Consumer for Generating Pacts")
+                .uponReceiving("Request from Pact Consumer")
                 .path("/hello-world")
                 .method("GET")
                 .willRespondWith()
                 .status(200)
-                .body("{\n" +
-                        "    \"id\": 1,\n" +
-                        "    \"content\": \"Welcome to PACT!\"\n" +
-                        "}")
+                .body(basicContract())
                 .toPact();
     }
 
     @Test
-    @PactVerification("test_provider")
+    @PactVerification("PactProvider")
     public void testPactForConsumer() {
         ResponseEntity<String> response =
-                new RestTemplate().exchange(mockProvider.getUrl()+ "/hello-world",
-                        HttpMethod.GET, null, String.class);
+            new RestTemplate().exchange(mockProvider.getUrl()+ "/hello-world",
+                    HttpMethod.GET, null, String.class);
         assertEquals(response.getStatusCode(), HttpStatus.OK);
     }
 
 
-    private DslPart testPactforConsumer() {
+    private DslPart basicContract() {
         return new PactDslJsonBody()
                 .numberType("id")
                 .stringType("content")
