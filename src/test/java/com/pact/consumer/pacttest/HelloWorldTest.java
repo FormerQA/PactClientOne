@@ -42,6 +42,7 @@ public class HelloWorldTest
     public RequestResponsePact createFragment(PactDslWithProvider builder) {
         return builder
                 .uponReceiving("Request from Pact Consumer")
+                .headers("name","pravitha")
                 .path("/hello-world")
                 .method("GET")
                 .willRespondWith()
@@ -53,9 +54,12 @@ public class HelloWorldTest
     @Test
     @PactVerification("PactProvider")
     public void testPactForConsumer() {
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("name","pravitha");
+        HttpEntity entity = new HttpEntity(headers);
         ResponseEntity<String> response =
             new RestTemplate().exchange(mockProvider.getUrl()+ "/hello-world",
-                    HttpMethod.GET, null, String.class);
+                    HttpMethod.GET, entity, String.class);
         assertEquals(response.getStatusCode(), HttpStatus.OK);
     }
 
