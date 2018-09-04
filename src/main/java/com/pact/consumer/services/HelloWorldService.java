@@ -11,6 +11,10 @@ import com.pact.consumer.clients.*;
 import com.pact.consumer.models.Greeting;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 @Service
 public class HelloWorldService {
     private ProviderClient providerClient;
@@ -22,11 +26,13 @@ public class HelloWorldService {
 
     @HystrixCommand(fallbackMethod = "getBackupHello")
     public Greeting sayHello(String name) {
-        return providerClient.getProviderHello(name);
+        Greeting greeting = providerClient.getProviderHello(name);
+        greeting.setCourseName("Contract Driven Testing");
+        return greeting;
     }
 
     public Greeting getBackupHello(String name) {
-        return new Greeting(0, String.format("Sorry - there's no one to welcome you %s , try later!", name));
+        return new Greeting(0, String.format("Sorry - there's no one to welcome you %s , try later!", name),"No Courses found");
     }
 
 

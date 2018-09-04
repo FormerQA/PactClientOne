@@ -21,9 +21,9 @@ public class HelloWorldController {
         this.helloWorldService = helloWorldService;
     }
 
-    @GetMapping("/hello")
+    @GetMapping("/course_details")
     public @ResponseBody
-    Greeting sayHello(@RequestParam(value="name", required=false, defaultValue="Nobody") String name) {
+    Greeting sayHello(@RequestParam(value="name", required=false, defaultValue="to PACT") String name) {
         return helloWorldService.sayHello(name);
     }
 
