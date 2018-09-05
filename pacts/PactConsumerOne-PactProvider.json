@@ -1,0 +1,71 @@
+{
+    "provider": {
+        "name": "PactProvider"
+    },
+    "consumer": {
+        "name": "PactConsumerOne"
+    },
+    "interactions": [
+        {
+            "description": "Request from Pact Consumer One",
+            "request": {
+                "method": "GET",
+                "path": "/hello-world",
+                "headers": {
+                    "name": "pravitha"
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "Content-Type": "application/json; charset=UTF-8"
+                },
+                "body": {
+                    "id": 100,
+                    "content": "string"
+                },
+                "matchingRules": {
+                    "body": {
+                        "$.id": {
+                            "matchers": [
+                                {
+                                    "match": "number"
+                                }
+                            ],
+                            "combine": "AND"
+                        },
+                        "$.content": {
+                            "matchers": [
+                                {
+                                    "match": "type"
+                                }
+                            ],
+                            "combine": "AND"
+                        }
+                    }
+                },
+                "generators": {
+                    "body": {
+                        "$.id": {
+                            "type": "RandomInt",
+                            "min": 0,
+                            "max": 2147483647
+                        },
+                        "$.content": {
+                            "type": "RandomString",
+                            "size": 20
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "metadata": {
+        "pact-specification": {
+            "version": "3.0.0"
+        },
+        "pact-jvm": {
+            "version": "3.5.8"
+        }
+    }
+}

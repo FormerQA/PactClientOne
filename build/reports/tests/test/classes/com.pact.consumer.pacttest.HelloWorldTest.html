@@ -23,7 +23,7 @@
 <tr>
 <td>
 <div class="infoBox" id="tests">
-<div class="counter">1</div>
+<div class="counter">2</div>
 <p>tests</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">1.835s</div>
+<div class="counter">2.107s</div>
 <p>duration</p>
 </div>
 </td>
@@ -79,7 +79,12 @@
 </thead>
 <tr>
 <td class="success">testPactForConsumer</td>
-<td>1.835s</td>
+<td>0.643s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testPactForConsumerUserRegistration</td>
+<td>1.464s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -87,66 +92,144 @@
 <div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>15:36:26.285 [Test worker] DEBUG org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: default
-15:36:26.298 [Test worker] DEBUG org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
-15:36:26.299 [Test worker] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection request: [route: {}-&gt;http://localhost:8082][total kept alive: 0; route allocated: 0 of 100; total allocated: 0 of 200]
-15:36:26.312 [Test worker] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection leased: [id: 0][route: {}-&gt;http://localhost:8082][total kept alive: 0; route allocated: 1 of 100; total allocated: 1 of 200]
-15:36:26.314 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Opening connection {}-&gt;http://localhost:8082
-15:36:26.316 [Test worker] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connecting to localhost/127.0.0.1:8082
-15:36:26.320 [Test worker] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connection established 127.0.0.1:58840&lt;-&gt;127.0.0.1:8082
-15:36:26.321 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Executing request OPTIONS / HTTP/1.1
-15:36:26.321 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Target auth state: UNCHALLENGED
-15:36:26.322 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Proxy auth state: UNCHALLENGED
-15:36:26.324 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 &gt;&gt; OPTIONS / HTTP/1.1
-15:36:26.324 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 &gt;&gt; X-PACT-BOOTCHECK: true
-15:36:26.324 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 &gt;&gt; Host: localhost:8082
-15:36:26.324 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 &gt;&gt; Connection: Keep-Alive
-15:36:26.324 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 &gt;&gt; User-Agent: Apache-HttpClient/4.5.3 (Java/1.8.0_131)
-15:36:26.324 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 &gt;&gt; Accept-Encoding: gzip,deflate
-15:36:26.324 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 &gt;&gt; &quot;OPTIONS / HTTP/1.1[\r][\n]&quot;
-15:36:26.324 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 &gt;&gt; &quot;X-PACT-BOOTCHECK: true[\r][\n]&quot;
-15:36:26.324 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 &gt;&gt; &quot;Host: localhost:8082[\r][\n]&quot;
-15:36:26.324 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 &gt;&gt; &quot;Connection: Keep-Alive[\r][\n]&quot;
-15:36:26.325 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 &gt;&gt; &quot;User-Agent: Apache-HttpClient/4.5.3 (Java/1.8.0_131)[\r][\n]&quot;
-15:36:26.325 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 &gt;&gt; &quot;Accept-Encoding: gzip,deflate[\r][\n]&quot;
-15:36:26.325 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 &gt;&gt; &quot;[\r][\n]&quot;
-15:36:26.381 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 &lt;&lt; &quot;HTTP/1.1 200 OK[\r][\n]&quot;
-15:36:26.381 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 &lt;&lt; &quot;Date: Mon, 03 Sep 2018 10:06:26 GMT[\r][\n]&quot;
-15:36:26.381 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 &lt;&lt; &quot;Transfer-encoding: chunked[\r][\n]&quot;
-15:36:26.381 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 &lt;&lt; &quot;X-pact-bootcheck: true[\r][\n]&quot;
-15:36:26.381 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 &lt;&lt; &quot;[\r][\n]&quot;
-15:36:26.385 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 &lt;&lt; HTTP/1.1 200 OK
-15:36:26.385 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 &lt;&lt; Date: Mon, 03 Sep 2018 10:06:26 GMT
-15:36:26.385 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 &lt;&lt; Transfer-encoding: chunked
-15:36:26.385 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 &lt;&lt; X-pact-bootcheck: true
-15:36:26.391 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Connection can be kept alive indefinitely
-15:36:26.612 [Test worker] DEBUG org.springframework.web.client.RestTemplate - Created GET request for &quot;http://localhost:8082/hello-world&quot;
-15:36:26.614 [Test worker] DEBUG org.springframework.web.client.RestTemplate - Setting request Accept header to [text/plain, application/json, application/*+json, */*]
-15:36:26.633 [Thread-5] DEBUG au.com.dius.pact.consumer.BaseMockServer - Received request: 	method: GET
+<pre>14:21:42.367 [Test worker] DEBUG org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: default
+14:21:42.378 [Test worker] DEBUG org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+14:21:42.379 [Test worker] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection request: [route: {}-&gt;http://localhost:8082][total kept alive: 0; route allocated: 0 of 100; total allocated: 0 of 200]
+14:21:42.390 [Test worker] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection leased: [id: 0][route: {}-&gt;http://localhost:8082][total kept alive: 0; route allocated: 1 of 100; total allocated: 1 of 200]
+14:21:42.392 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Opening connection {}-&gt;http://localhost:8082
+14:21:42.394 [Test worker] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connecting to localhost/127.0.0.1:8082
+14:21:42.397 [Test worker] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connection established 127.0.0.1:63502&lt;-&gt;127.0.0.1:8082
+14:21:42.397 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Executing request OPTIONS / HTTP/1.1
+14:21:42.397 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Target auth state: UNCHALLENGED
+14:21:42.398 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Proxy auth state: UNCHALLENGED
+14:21:42.400 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 &gt;&gt; OPTIONS / HTTP/1.1
+14:21:42.400 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 &gt;&gt; X-PACT-BOOTCHECK: true
+14:21:42.400 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 &gt;&gt; Host: localhost:8082
+14:21:42.400 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 &gt;&gt; Connection: Keep-Alive
+14:21:42.400 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 &gt;&gt; User-Agent: Apache-HttpClient/4.5.3 (Java/1.8.0_131)
+14:21:42.400 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 &gt;&gt; Accept-Encoding: gzip,deflate
+14:21:42.400 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 &gt;&gt; &quot;OPTIONS / HTTP/1.1[\r][\n]&quot;
+14:21:42.400 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 &gt;&gt; &quot;X-PACT-BOOTCHECK: true[\r][\n]&quot;
+14:21:42.400 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 &gt;&gt; &quot;Host: localhost:8082[\r][\n]&quot;
+14:21:42.401 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 &gt;&gt; &quot;Connection: Keep-Alive[\r][\n]&quot;
+14:21:42.401 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 &gt;&gt; &quot;User-Agent: Apache-HttpClient/4.5.3 (Java/1.8.0_131)[\r][\n]&quot;
+14:21:42.401 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 &gt;&gt; &quot;Accept-Encoding: gzip,deflate[\r][\n]&quot;
+14:21:42.401 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 &gt;&gt; &quot;[\r][\n]&quot;
+14:21:42.450 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 &lt;&lt; &quot;HTTP/1.1 200 OK[\r][\n]&quot;
+14:21:42.450 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 &lt;&lt; &quot;Date: Wed, 05 Sep 2018 08:51:42 GMT[\r][\n]&quot;
+14:21:42.450 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 &lt;&lt; &quot;Transfer-encoding: chunked[\r][\n]&quot;
+14:21:42.450 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 &lt;&lt; &quot;X-pact-bootcheck: true[\r][\n]&quot;
+14:21:42.450 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 &lt;&lt; &quot;[\r][\n]&quot;
+14:21:42.452 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 &lt;&lt; HTTP/1.1 200 OK
+14:21:42.452 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 &lt;&lt; Date: Wed, 05 Sep 2018 08:51:42 GMT
+14:21:42.452 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 &lt;&lt; Transfer-encoding: chunked
+14:21:42.452 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 &lt;&lt; X-pact-bootcheck: true
+14:21:42.458 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Connection can be kept alive indefinitely
+14:21:42.629 [Test worker] DEBUG org.springframework.web.client.RestTemplate - Created POST request for &quot;http://localhost:8082/hello-world/register&quot;
+14:21:42.674 [Test worker] DEBUG org.springframework.web.client.RestTemplate - Setting request Accept header to [application/json, application/*+json]
+14:21:42.689 [Test worker] DEBUG org.springframework.web.client.RestTemplate - Writing [UserRegistration(user_id=123456, userName=Pravitha, course=[Course(courseId=CourseId(user_id=123456, courseId=1), courseName=PACT, registerDate=2018-09-05)])] using [org.springframework.http.converter.json.MappingJackson2HttpMessageConverter@7a3e2455]
+14:21:42.726 [Thread-5] DEBUG au.com.dius.pact.consumer.BaseMockServer - Received request: 	method: POST
+	path: /hello-world/register
+	query: [:]
+	headers: [Accept:application/json, application/*+json, Connection:keep-alive, Host:localhost:8082, User-agent:Java/1.8.0_131, Content-type:application/json;charset=UTF-8, Content-length:155]
+	matchers: MatchingRules(rules=[:])
+	generators: Generators(categories={})
+	body: OptionalBody(state=PRESENT, value={&quot;user_id&quot;:123456,&quot;user_name&quot;:&quot;Pravitha&quot;,&quot;courses&quot;:[{&quot;course_details&quot;:{&quot;user_id&quot;:123456,&quot;course_id&quot;:1},&quot;course_name&quot;:&quot;PACT&quot;,&quot;register_date&quot;:&quot;2018-09-05&quot;}]})
+14:21:42.736 [Thread-5] DEBUG au.com.dius.pact.model.RequestMatching$ - comparing to expected request: 
+	method: POST
+	path: /hello-world/register
+	query: [:]
+	headers: [Content-Type:application/json; charset=UTF-8]
+	matchers: MatchingRules(rules=[body:Category(name=body, matchingRules={$.user_id=MatchingRuleGroup(rules=[NumberTypeMatcher(numberType=NUMBER)], ruleLogic=AND), $.user_name=MatchingRuleGroup(rules=[au.com.dius.pact.model.matchingrules.TypeMatcher@13455cb7], ruleLogic=AND), $.courses=MatchingRuleGroup(rules=[MinTypeMatcher(min=1)], ruleLogic=AND), $.courses[*].course_name=MatchingRuleGroup(rules=[au.com.dius.pact.model.matchingrules.TypeMatcher@13455cb7], ruleLogic=AND), $.courses[*].register_date=MatchingRuleGroup(rules=[DateMatcher(format=yyyy-MM-dd)], ruleLogic=AND), $.courses[*].course_details.user_id=MatchingRuleGroup(rules=[NumberTypeMatcher(numberType=NUMBER)], ruleLogic=AND), $.courses[*].course_details.course_id=MatchingRuleGroup(rules=[NumberTypeMatcher(numberType=NUMBER)], ruleLogic=AND)})])
+	generators: Generators(categories={BODY={$.user_id=RandomIntGenerator(min=0, max=2147483647), $.user_name=RandomStringGenerator(size=20), $.courses[*].course_name=RandomStringGenerator(size=20), $.courses[*].register_date=DateGenerator(format=yyyy-MM-dd), $.courses[*].course_details.user_id=RandomIntGenerator(min=0, max=2147483647), $.courses[*].course_details.course_id=RandomIntGenerator(min=0, max=2147483647)}})
+	body: OptionalBody(state=PRESENT, value={&quot;courses&quot;:[{&quot;course_name&quot;:&quot;string&quot;,&quot;register_date&quot;:&quot;2000-01-31&quot;,&quot;course_details&quot;:{&quot;course_id&quot;:100,&quot;user_id&quot;:100}}],&quot;user_id&quot;:100,&quot;user_name&quot;:&quot;string&quot;})
+14:21:42.809 [Thread-5] DEBUG au.com.dius.pact.matchers.HeaderMatcher$ - Comparing header 'Content-Type': 'application/json;charset=UTF-8' to 'application/json; charset=UTF-8'
+14:21:42.810 [Thread-5] DEBUG au.com.dius.pact.matchers.HeaderMatcher$ - Comparing content type header: 'application/json;charset=UTF-8' to 'application/json; charset=UTF-8'
+14:21:42.841 [Thread-5] DEBUG au.com.dius.pact.model.Matching$ - Found a matcher for application/json -&gt; Some((application/.*json,au.com.dius.pact.matchers.JsonBodyMatcher@1fd5976e))
+14:21:42.892 [Thread-5] DEBUG au.com.dius.pact.matchers.JsonBodyMatcher - compareLists: Matcher defined for path List($, courses)
+14:21:42.911 [Thread-5] DEBUG au.com.dius.pact.matchers.MatcherExecutor - comparing List(Map(course_details -&gt; Map(user_id -&gt; 123456, course_id -&gt; 1), course_name -&gt; PACT, register_date -&gt; 2018-09-05)) with minimum 1 at [$, courses]
+14:21:42.939 [Thread-5] DEBUG au.com.dius.pact.matchers.JsonBodyMatcher - compareValues: Matcher defined for path List($, courses, 0, course_name)
+14:21:42.943 [Thread-5] DEBUG au.com.dius.pact.matchers.MatcherExecutor - comparing type of 'PACT' to 'string' at [$, courses, 0, course_name]
+14:21:42.946 [Thread-5] DEBUG au.com.dius.pact.matchers.JsonBodyMatcher - compareValues: Matcher defined for path List($, courses, 0, register_date)
+14:21:42.949 [Thread-5] DEBUG au.com.dius.pact.matchers.MatcherExecutor - comparing '2018-09-05' to date pattern yyyy-MM-dd at [$, courses, 0, register_date]
+14:21:42.955 [Thread-5] DEBUG au.com.dius.pact.matchers.JsonBodyMatcher - compareValues: Matcher defined for path List($, courses, 0, course_details, course_id)
+14:21:42.958 [Thread-5] DEBUG au.com.dius.pact.matchers.MatcherExecutor - comparing type of 1 to a number at [$, courses, 0, course_details, course_id]
+14:21:42.960 [Thread-5] DEBUG au.com.dius.pact.matchers.JsonBodyMatcher - compareValues: Matcher defined for path List($, courses, 0, course_details, user_id)
+14:21:42.962 [Thread-5] DEBUG au.com.dius.pact.matchers.MatcherExecutor - comparing type of 123456 to a number at [$, courses, 0, course_details, user_id]
+14:21:42.964 [Thread-5] DEBUG au.com.dius.pact.matchers.JsonBodyMatcher - compareValues: Matcher defined for path List($, user_id)
+14:21:42.965 [Thread-5] DEBUG au.com.dius.pact.matchers.MatcherExecutor - comparing type of 123456 to a number at [$, user_id]
+14:21:42.966 [Thread-5] DEBUG au.com.dius.pact.matchers.JsonBodyMatcher - compareValues: Matcher defined for path List($, user_name)
+14:21:42.967 [Thread-5] DEBUG au.com.dius.pact.matchers.MatcherExecutor - comparing type of 'Pravitha' to 'string' at [$, user_name]
+14:21:42.968 [Thread-5] DEBUG au.com.dius.pact.model.RequestMatching$ - Request mismatch: List()
+14:21:43.038 [Thread-5] DEBUG au.com.dius.pact.consumer.BaseMockServer - Generating response: 	status: 201
+	headers: [Content-Type:application/json; charset=UTF-8]
+	matchers: MatchingRules(rules=[body:Category(name=body, matchingRules={$.user_id=MatchingRuleGroup(rules=[NumberTypeMatcher(numberType=NUMBER)], ruleLogic=AND), $.user_name=MatchingRuleGroup(rules=[au.com.dius.pact.model.matchingrules.TypeMatcher@13455cb7], ruleLogic=AND), $.courses=MatchingRuleGroup(rules=[MinTypeMatcher(min=1)], ruleLogic=AND), $.courses[*].course_name=MatchingRuleGroup(rules=[au.com.dius.pact.model.matchingrules.TypeMatcher@13455cb7], ruleLogic=AND), $.courses[*].register_date=MatchingRuleGroup(rules=[DateMatcher(format=yyyy-MM-dd)], ruleLogic=AND), $.courses[*].course_details.user_id=MatchingRuleGroup(rules=[NumberTypeMatcher(numberType=NUMBER)], ruleLogic=AND), $.courses[*].course_details.course_id=MatchingRuleGroup(rules=[NumberTypeMatcher(numberType=NUMBER)], ruleLogic=AND)})])
+	generators: Generators(categories={BODY={$.user_id=RandomIntGenerator(min=0, max=2147483647), $.user_name=RandomStringGenerator(size=20), $.courses[*].course_name=RandomStringGenerator(size=20), $.courses[*].register_date=DateGenerator(format=yyyy-MM-dd), $.courses[*].course_details.user_id=RandomIntGenerator(min=0, max=2147483647), $.courses[*].course_details.course_id=RandomIntGenerator(min=0, max=2147483647)}})
+	body: OptionalBody(state=PRESENT, value={&quot;courses&quot;:[{&quot;course_name&quot;:&quot;PJghKvbP1AZ3wXccXnGE&quot;,&quot;register_date&quot;:&quot;2018-09-05&quot;,&quot;course_details&quot;:{&quot;course_id&quot;:285946815,&quot;user_id&quot;:399707449}}],&quot;user_id&quot;:1164044706,&quot;user_name&quot;:&quot;BFsvYQhzk1tEhYIV2Y9w&quot;})
+14:21:43.041 [Test worker] DEBUG org.springframework.web.client.RestTemplate - POST request for &quot;http://localhost:8082/hello-world/register&quot; resulted in 201 (Created)
+14:21:43.042 [Test worker] DEBUG org.springframework.web.client.RestTemplate - Reading [class com.pact.consumer.models.UserRegistration] as &quot;application/json;charset=UTF-8&quot; using [org.springframework.http.converter.json.MappingJackson2HttpMessageConverter@7a3e2455]
+14:21:43.171 [Test worker] DEBUG au.com.dius.pact.consumer.BaseMockServer - Writing pact PactConsumerTwo -&gt; PactProvider to file pacts/PactConsumerTwo-PactProvider.json
+14:21:43.229 [Test worker] DEBUG org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: default
+14:21:43.230 [Test worker] DEBUG org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+14:21:43.230 [Test worker] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection request: [route: {}-&gt;http://localhost:8082][total kept alive: 0; route allocated: 1 of 100; total allocated: 1 of 200]
+14:21:43.230 [Test worker] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection leased: [id: 1][route: {}-&gt;http://localhost:8082][total kept alive: 0; route allocated: 2 of 100; total allocated: 2 of 200]
+14:21:43.230 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Opening connection {}-&gt;http://localhost:8082
+14:21:43.230 [Test worker] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connecting to localhost/127.0.0.1:8082
+14:21:43.231 [Test worker] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connection established 127.0.0.1:63504&lt;-&gt;127.0.0.1:8082
+14:21:43.231 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Executing request OPTIONS / HTTP/1.1
+14:21:43.231 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Target auth state: UNCHALLENGED
+14:21:43.231 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Proxy auth state: UNCHALLENGED
+14:21:43.231 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 &gt;&gt; OPTIONS / HTTP/1.1
+14:21:43.231 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 &gt;&gt; X-PACT-BOOTCHECK: true
+14:21:43.231 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 &gt;&gt; Host: localhost:8082
+14:21:43.231 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 &gt;&gt; Connection: Keep-Alive
+14:21:43.231 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 &gt;&gt; User-Agent: Apache-HttpClient/4.5.3 (Java/1.8.0_131)
+14:21:43.231 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 &gt;&gt; Accept-Encoding: gzip,deflate
+14:21:43.231 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 &gt;&gt; &quot;OPTIONS / HTTP/1.1[\r][\n]&quot;
+14:21:43.232 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 &gt;&gt; &quot;X-PACT-BOOTCHECK: true[\r][\n]&quot;
+14:21:43.232 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 &gt;&gt; &quot;Host: localhost:8082[\r][\n]&quot;
+14:21:43.232 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 &gt;&gt; &quot;Connection: Keep-Alive[\r][\n]&quot;
+14:21:43.232 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 &gt;&gt; &quot;User-Agent: Apache-HttpClient/4.5.3 (Java/1.8.0_131)[\r][\n]&quot;
+14:21:43.232 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 &gt;&gt; &quot;Accept-Encoding: gzip,deflate[\r][\n]&quot;
+14:21:43.232 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 &gt;&gt; &quot;[\r][\n]&quot;
+14:21:43.232 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 &lt;&lt; &quot;HTTP/1.1 200 OK[\r][\n]&quot;
+14:21:43.233 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 &lt;&lt; &quot;Date: Wed, 05 Sep 2018 08:51:43 GMT[\r][\n]&quot;
+14:21:43.233 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 &lt;&lt; &quot;Transfer-encoding: chunked[\r][\n]&quot;
+14:21:43.233 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 &lt;&lt; &quot;X-pact-bootcheck: true[\r][\n]&quot;
+14:21:43.233 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 &lt;&lt; &quot;[\r][\n]&quot;
+14:21:43.233 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 &lt;&lt; HTTP/1.1 200 OK
+14:21:43.233 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 &lt;&lt; Date: Wed, 05 Sep 2018 08:51:43 GMT
+14:21:43.233 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 &lt;&lt; Transfer-encoding: chunked
+14:21:43.233 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 &lt;&lt; X-pact-bootcheck: true
+14:21:43.233 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Connection can be kept alive indefinitely
+14:21:43.238 [Test worker] DEBUG org.springframework.web.client.RestTemplate - Created GET request for &quot;http://localhost:8082/hello-world&quot;
+14:21:43.239 [Test worker] DEBUG org.springframework.web.client.RestTemplate - Setting request Accept header to [text/plain, application/json, application/*+json, */*]
+14:21:43.241 [Thread-7] DEBUG au.com.dius.pact.consumer.BaseMockServer - Received request: 	method: GET
 	path: /hello-world
 	query: [:]
-	headers: [Accept:text/plain, application/json, application/*+json, */*, Connection:keep-alive, Host:localhost:8082, User-agent:Java/1.8.0_131]
+	headers: [Accept:text/plain, application/json, application/*+json, */*, Connection:keep-alive, Host:localhost:8082, User-agent:Java/1.8.0_131, Name:pravitha]
 	matchers: MatchingRules(rules=[:])
 	generators: Generators(categories={})
 	body: OptionalBody(state=EMPTY, value=)
-15:36:26.643 [Thread-5] DEBUG au.com.dius.pact.model.RequestMatching$ - comparing to expected request: 
+14:21:43.242 [Thread-7] DEBUG au.com.dius.pact.model.RequestMatching$ - comparing to expected request: 
 	method: GET
 	path: /hello-world
 	query: [:]
-	headers: [:]
+	headers: [name:pravitha]
 	matchers: MatchingRules(rules=[:])
 	generators: Generators(categories={})
 	body: OptionalBody(state=MISSING, value=null)
-15:36:26.723 [Thread-5] DEBUG au.com.dius.pact.model.Matching$ - Found a matcher for text/plain -&gt; Some((text/plain,au.com.dius.pact.matchers.PlainTextBodyMatcher@55218137))
-15:36:26.723 [Thread-5] DEBUG au.com.dius.pact.model.RequestMatching$ - Request mismatch: List()
-15:36:26.789 [Thread-5] DEBUG au.com.dius.pact.consumer.BaseMockServer - Generating response: 	status: 200
+14:21:43.243 [Thread-7] DEBUG au.com.dius.pact.matchers.HeaderMatcher$ - Comparing header 'name': 'pravitha' to 'pravitha'
+14:21:43.246 [Thread-7] DEBUG au.com.dius.pact.model.Matching$ - Found a matcher for text/plain -&gt; Some((text/plain,au.com.dius.pact.matchers.PlainTextBodyMatcher@154c3f21))
+14:21:43.246 [Thread-7] DEBUG au.com.dius.pact.model.RequestMatching$ - Request mismatch: List()
+14:21:43.248 [Thread-7] DEBUG au.com.dius.pact.consumer.BaseMockServer - Generating response: 	status: 200
 	headers: [Content-Type:application/json; charset=UTF-8]
-	matchers: MatchingRules(rules=[body:Category(name=body, matchingRules={$.id=MatchingRuleGroup(rules=[NumberTypeMatcher(numberType=NUMBER)], ruleLogic=AND), $.content=MatchingRuleGroup(rules=[au.com.dius.pact.model.matchingrules.TypeMatcher@63625185], ruleLogic=AND)})])
+	matchers: MatchingRules(rules=[body:Category(name=body, matchingRules={$.id=MatchingRuleGroup(rules=[NumberTypeMatcher(numberType=NUMBER)], ruleLogic=AND), $.content=MatchingRuleGroup(rules=[au.com.dius.pact.model.matchingrules.TypeMatcher@13455cb7], ruleLogic=AND)})])
 	generators: Generators(categories={BODY={$.id=RandomIntGenerator(min=0, max=2147483647), $.content=RandomStringGenerator(size=20)}})
-	body: OptionalBody(state=PRESENT, value={&quot;id&quot;:1945197261,&quot;content&quot;:&quot;7nHTAnV51euNnd6YIkgZ&quot;})
-15:36:26.793 [Test worker] DEBUG org.springframework.web.client.RestTemplate - GET request for &quot;http://localhost:8082/hello-world&quot; resulted in 200 (OK)
-15:36:26.793 [Test worker] DEBUG org.springframework.web.client.RestTemplate - Reading [java.lang.String] as &quot;application/json;charset=UTF-8&quot; using [org.springframework.http.converter.StringHttpMessageConverter@38298f58]
-15:36:26.907 [Test worker] DEBUG au.com.dius.pact.consumer.BaseMockServer - Writing pact PactConsumerOne -&gt; PactProvider to file pacts/PactConsumerOne-PactProvider.json
+	body: OptionalBody(state=PRESENT, value={&quot;id&quot;:1189059451,&quot;content&quot;:&quot;zg4lRmVTx0ZMBnoCE3n9&quot;})
+14:21:43.248 [Test worker] DEBUG org.springframework.web.client.RestTemplate - GET request for &quot;http://localhost:8082/hello-world&quot; resulted in 200 (OK)
+14:21:43.248 [Test worker] DEBUG org.springframework.web.client.RestTemplate - Reading [java.lang.String] as &quot;application/json;charset=UTF-8&quot; using [org.springframework.http.converter.StringHttpMessageConverter@475dfa83]
+14:21:43.351 [Test worker] DEBUG au.com.dius.pact.consumer.BaseMockServer - Writing pact PactConsumerOne -&gt; PactProvider to file pacts/PactConsumerOne-PactProvider.json
 </pre>
 </span>
 </div>
@@ -158,7 +241,7 @@
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 4.0.1</a> at Sep 3, 2018 3:36:27 PM</p>
+<a href="http://www.gradle.org">Gradle 4.3</a> at Sep 5, 2018 2:21:43 PM</p>
 </div>
 </div>
 </body>

@@ -1,0 +1,254 @@
+{
+    "provider": {
+        "name": "PactProvider"
+    },
+    "consumer": {
+        "name": "PactConsumerTwo"
+    },
+    "interactions": [
+        {
+            "description": "Request from Pact Consumer One",
+            "request": {
+                "method": "POST",
+                "path": "/hello-world/register",
+                "headers": {
+                    "Content-Type": "application/json; charset=UTF-8"
+                },
+                "body": {
+                    "courses": [
+                        {
+                            "course_name": "string",
+                            "register_date": "2000-01-31",
+                            "course_details": {
+                                "course_id": 100,
+                                "user_id": 100
+                            }
+                        }
+                    ],
+                    "user_id": 100,
+                    "user_name": "string"
+                },
+                "matchingRules": {
+                    "body": {
+                        "$.user_id": {
+                            "matchers": [
+                                {
+                                    "match": "number"
+                                }
+                            ],
+                            "combine": "AND"
+                        },
+                        "$.user_name": {
+                            "matchers": [
+                                {
+                                    "match": "type"
+                                }
+                            ],
+                            "combine": "AND"
+                        },
+                        "$.courses": {
+                            "matchers": [
+                                {
+                                    "match": "type",
+                                    "min": 1
+                                }
+                            ],
+                            "combine": "AND"
+                        },
+                        "$.courses[*].course_name": {
+                            "matchers": [
+                                {
+                                    "match": "type"
+                                }
+                            ],
+                            "combine": "AND"
+                        },
+                        "$.courses[*].register_date": {
+                            "matchers": [
+                                {
+                                    "match": "date",
+                                    "date": "yyyy-MM-dd"
+                                }
+                            ],
+                            "combine": "AND"
+                        },
+                        "$.courses[*].course_details.user_id": {
+                            "matchers": [
+                                {
+                                    "match": "number"
+                                }
+                            ],
+                            "combine": "AND"
+                        },
+                        "$.courses[*].course_details.course_id": {
+                            "matchers": [
+                                {
+                                    "match": "number"
+                                }
+                            ],
+                            "combine": "AND"
+                        }
+                    },
+                    "path": {
+                        
+                    },
+                    "header": {
+                        
+                    }
+                },
+                "generators": {
+                    "body": {
+                        "$.user_id": {
+                            "type": "RandomInt",
+                            "min": 0,
+                            "max": 2147483647
+                        },
+                        "$.user_name": {
+                            "type": "RandomString",
+                            "size": 20
+                        },
+                        "$.courses[*].course_name": {
+                            "type": "RandomString",
+                            "size": 20
+                        },
+                        "$.courses[*].register_date": {
+                            "type": "Date",
+                            "format": "yyyy-MM-dd"
+                        },
+                        "$.courses[*].course_details.user_id": {
+                            "type": "RandomInt",
+                            "min": 0,
+                            "max": 2147483647
+                        },
+                        "$.courses[*].course_details.course_id": {
+                            "type": "RandomInt",
+                            "min": 0,
+                            "max": 2147483647
+                        }
+                    }
+                }
+            },
+            "response": {
+                "status": 201,
+                "headers": {
+                    "Content-Type": "application/json; charset=UTF-8"
+                },
+                "body": {
+                    "courses": [
+                        {
+                            "course_name": "string",
+                            "register_date": "2000-01-31",
+                            "course_details": {
+                                "course_id": 100,
+                                "user_id": 100
+                            }
+                        }
+                    ],
+                    "user_id": 100,
+                    "user_name": "string"
+                },
+                "matchingRules": {
+                    "body": {
+                        "$.user_id": {
+                            "matchers": [
+                                {
+                                    "match": "number"
+                                }
+                            ],
+                            "combine": "AND"
+                        },
+                        "$.user_name": {
+                            "matchers": [
+                                {
+                                    "match": "type"
+                                }
+                            ],
+                            "combine": "AND"
+                        },
+                        "$.courses": {
+                            "matchers": [
+                                {
+                                    "match": "type",
+                                    "min": 1
+                                }
+                            ],
+                            "combine": "AND"
+                        },
+                        "$.courses[*].course_name": {
+                            "matchers": [
+                                {
+                                    "match": "type"
+                                }
+                            ],
+                            "combine": "AND"
+                        },
+                        "$.courses[*].register_date": {
+                            "matchers": [
+                                {
+                                    "match": "date",
+                                    "date": "yyyy-MM-dd"
+                                }
+                            ],
+                            "combine": "AND"
+                        },
+                        "$.courses[*].course_details.user_id": {
+                            "matchers": [
+                                {
+                                    "match": "number"
+                                }
+                            ],
+                            "combine": "AND"
+                        },
+                        "$.courses[*].course_details.course_id": {
+                            "matchers": [
+                                {
+                                    "match": "number"
+                                }
+                            ],
+                            "combine": "AND"
+                        }
+                    }
+                },
+                "generators": {
+                    "body": {
+                        "$.user_id": {
+                            "type": "RandomInt",
+                            "min": 0,
+                            "max": 2147483647
+                        },
+                        "$.user_name": {
+                            "type": "RandomString",
+                            "size": 20
+                        },
+                        "$.courses[*].course_name": {
+                            "type": "RandomString",
+                            "size": 20
+                        },
+                        "$.courses[*].register_date": {
+                            "type": "Date",
+                            "format": "yyyy-MM-dd"
+                        },
+                        "$.courses[*].course_details.user_id": {
+                            "type": "RandomInt",
+                            "min": 0,
+                            "max": 2147483647
+                        },
+                        "$.courses[*].course_details.course_id": {
+                            "type": "RandomInt",
+                            "min": 0,
+                            "max": 2147483647
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "metadata": {
+        "pact-specification": {
+            "version": "3.0.0"
+        },
+        "pact-jvm": {
+            "version": "3.5.8"
+        }
+    }
+}
