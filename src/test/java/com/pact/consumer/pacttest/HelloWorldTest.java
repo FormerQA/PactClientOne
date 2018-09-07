@@ -31,9 +31,6 @@ import static org.junit.Assert.assertEquals;
 
 public class HelloWorldTest
 {
-    private final String INVENTORY_REMOVAL_CONSUMER = "Packslip";
-
-    private String newInventoryRemovalJsonBody="";
 
     @Rule
     public PactProviderRuleMk2 mockProvider = new PactProviderRuleMk2("PactProvider", "localhost", 8082, this);
@@ -42,11 +39,11 @@ public class HelloWorldTest
     public RequestResponsePact createFragment(PactDslWithProvider builder) {
         return builder
                 .uponReceiving("Request from Pact Consumer")
-                .path("/hello-world")
-                .method("GET")
+                    .path("/hello-world")
+                    .method("GET")
                 .willRespondWith()
-                .status(200)
-                .body(basicContract())
+                    .status(200)
+                    .body(basicContract())
                 .toPact();
     }
 
